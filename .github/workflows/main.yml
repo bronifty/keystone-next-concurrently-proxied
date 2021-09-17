@@ -27,3 +27,10 @@ jobs:
         with:
           build: 'true'
           namespace: pr-${{ github.event.number }}-bronifty
+          
+      - name: add comment to PR
+        uses: okteto/notify-pr@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "Preview environment available at https://web-pr-${{ github.event.number }}-namespace.cloud.okteto.net"
