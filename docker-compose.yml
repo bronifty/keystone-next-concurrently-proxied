@@ -30,6 +30,7 @@ services:
     restart: always
     depends_on:
       - proxy
+
   # pgadmin:
   #   container_name: pgadmin
   #   image: pgadmin

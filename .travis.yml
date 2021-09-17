@@ -1,0 +1,23 @@
+sudo: required
+language: node_js
+node_js:
+  - '15'
+services:
+  - docker
+
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+script:
+  - docker build -t $DOCKER_USERNAME/proxy ./proxy;
+  - docker build -t $DOCKER_USERNAME/frontend ./frontend;
+  - docker build -t $DOCKER_USERNAME/backend ./backend;
+
+deploy:
+  provider: script
+  script: docker push $DOCKER_USERNAME/proxy
+    docker push $DOCKER_USERNAME/frontend
+    docker push $DOCKER_USERNAME/backend
+
+  on:
+    branch: master
