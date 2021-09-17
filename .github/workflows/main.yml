@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
 
       - name: Login
         uses: okteto/login@latest
@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: "Preview environment available at https://web-pr-${{ github.event.number }}-bronifty.cloud.okteto.net"
+          message: "Preview environment available at https://sick-fits-proxy-demo-pr-${{ github.event.number }}-bronifty.cloud.okteto.net"
