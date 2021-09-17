@@ -1,3 +1,4 @@
 tasks:
-  - init: cd backend && yarn
+  - init: cd backend && yarn && cd ../frontend/ && yarn
     command: yarn run concurrently
+#prebuild
