@@ -8,6 +8,8 @@ const adapterConfig = { DATABASE_URL: process.env.DATABASE_URL };
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
+  cookieSecret:
+    'Cooooooooooooooooooooooookkkkkkkkkkkkiiiiiiiiiieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 });
 
 module.exports = {
@@ -16,4 +18,7 @@ module.exports = {
     new GraphQLApp(),
     new AdminUIApp({ name: PROJECT_NAME, enableDefaultRoute: true }),
   ],
+  configureExpress: (app) => {
+    app.set('trust proxy', true);
+  },
 };

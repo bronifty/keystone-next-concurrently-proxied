@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start -p 7777",
+    "start": "next start -p 3000",
     "test": "NODE_ENV=test jest --watch"
   },
   "author": "",
