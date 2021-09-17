@@ -10,7 +10,9 @@ services:
   frontend:
     image: bronifty80/frontend
     container_name: frontend
-    # build: ./frontend
+    deploy:
+      mode: replicated
+      replicas: 2
     ports:
       - 3000
     restart: always
@@ -19,9 +21,9 @@ services:
   backend:
     image: bronifty80/backend
     container_name: backend
-    # build: ./backend
-    # env_file:
-    #   - .env
+    deploy:
+      mode: replicated
+      replicas: 4
     environment:
       DATABASE_URL: ${DATABASE_URL}
     #   COOKIE_SECRET: ${COOKIE_SECRET}

@@ -6,3 +6,19 @@
 - dockerhub is the registry for the production images
 
 ### App is under construction
+
+## Usage
+
+- rename sample.env to .env and provide a working mongodb url
+
+- docker:
+
+```
+docker-compose up
+```
+
+- node:
+
+```
+cd frontend && yarn && cd ../backend/ && yarn && yarn run concurrently
+```
