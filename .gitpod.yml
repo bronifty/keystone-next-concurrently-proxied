@@ -1,4 +1,6 @@
 tasks:
   - init: cd backend && yarn && cd ../frontend/ && yarn
     command: yarn run concurrently
-#prebuild
+ports:
+  - port: 3000-8999
+    onOpen: ignore
