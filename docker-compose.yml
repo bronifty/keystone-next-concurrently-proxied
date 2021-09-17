@@ -30,11 +30,6 @@ services:
     restart: always
     depends_on:
       - proxy
-  travis:
-    image: travisci/ci-nodejs
-    container_name: travis
-    build: .
-    restart: always
 
   # pgadmin:
   #   container_name: pgadmin
