@@ -11,12 +11,12 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "concurrently": "concurrently \"yarn run dev\" \"yarn run frontend\"",
-    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true nodemon --exec keystone dev",
-    "frontend": "cd frontend/ && yarn run dev",
-    "build": "cross-env NODE_ENV=production yarn && keystone build && cd frontend/ && yarn && yarn build",
-    "start": "cross-env NODE_ENV=production keystone start && cd frontend/ && yarn start",
-    "create-tables": "cross-env keystone create-tables"
+    "concurrently": "concurrently \"yarn run backend\" \"yarn run frontend\"",
+    "backend": "cross-env NODE_ENV=development DISABLE_LOGGING=true nodemon --exec keystone dev",
+    "frontend": "cd ../frontend/ && yarn run dev",
+    "build": "cross-env NODE_ENV=production && cd backend/ && keystone build && cd ../frontend/ && yarn build",
+    "start": "cross-env NODE_ENV=production cd backend/ && keystone start && cd ../frontend/ && yarn start",
+    "create-tables": "cross-env cd backend/ && keystone create-tables"
   },
   "dependencies": {
     "@keystonejs/adapter-mongoose": "^11.2.2",
