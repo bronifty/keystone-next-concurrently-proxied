@@ -12,7 +12,7 @@ services:
     container_name: frontend
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 5
     ports:
       - 3000
     restart: always
@@ -23,7 +23,7 @@ services:
     container_name: backend
     deploy:
       mode: replicated
-      replicas: 4
+      replicas: 14
     environment:
       DATABASE_URL: ${DATABASE_URL}
     #   COOKIE_SECRET: ${COOKIE_SECRET}
