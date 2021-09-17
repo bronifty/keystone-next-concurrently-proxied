@@ -3,4 +3,4 @@ tasks:
     command: yarn run concurrently
 ports:
   - port: 3000-8999
-    onOpen: ignore
+    onOpen: open-preview
