@@ -20,12 +20,14 @@ services:
     image: backend
     container_name: backend
     build: ./backend
-    environment:
-      DATABASE_URL: ${DATABASE_URL}
-      COOKIE_SECRET: ${COOKIE_SECRET}
+    env_file:
+      - .env
+    # environment:
+    #   DATABASE_URL: ${DATABASE_URL}
+    #   COOKIE_SECRET: ${COOKIE_SECRET}
     ports:
       - 3000
-    # restart: always
+    restart: always
     depends_on:
       - proxy
   # pgadmin:
