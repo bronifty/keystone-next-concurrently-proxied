@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: "Preview environment available at https://web-pr-${{ github.event.number }}-namespace.cloud.okteto.net"
+          message: "Preview environment available at https://web-pr-${{ github.event.number }}-bronifty.cloud.okteto.net"
