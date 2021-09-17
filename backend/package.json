@@ -14,8 +14,8 @@
     "concurrently": "concurrently \"yarn run backend\" \"yarn run frontend\"",
     "backend": "cross-env NODE_ENV=development DISABLE_LOGGING=true nodemon --exec keystone dev",
     "frontend": "cd ../frontend/ && yarn run dev",
-    "build": "cross-env NODE_ENV=production keystone build && cd ../frontend/ && yarn build",
-    "start": "cross-env NODE_ENV=production keystone start && cd ../frontend/ && yarn start",
+    "build": "cross-env NODE_ENV=production keystone build",
+    "start": "cross-env NODE_ENV=production keystone start",
     "create-tables": "cross-env keystone create-tables"
   },
   "dependencies": {
@@ -23,11 +23,11 @@
     "@keystonejs/app-admin-ui": "^7.5.2",
     "@keystonejs/app-graphql": "^6.3.2",
     "@keystonejs/keystone": "^19.3.3",
-    "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "nodemon": "^2.0.12"
   }
 }

@@ -22,7 +22,7 @@ services:
     build: ./backend
     environment:
       DATABASE_URL: ${DATABASE_URL}
-      SESSION_SECRET: ${SESSION_SECRET}
+      COOKIE_SECRET: ${COOKIE_SECRET}
     ports:
       - 3000
     # restart: always
