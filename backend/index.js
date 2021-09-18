@@ -5,12 +5,15 @@ const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 const PROJECT_NAME = 'keystone';
 const adapterConfig = { DATABASE_URL: process.env.DATABASE_URL };
+const PostSchema = require('./lists/Post');
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
   cookieSecret:
     'Cooooooooooooooooooooooookkkkkkkkkkkkiiiiiiiiiieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 });
+
+keystone.createList('Post', PostSchema);
 
 module.exports = {
   keystone,
