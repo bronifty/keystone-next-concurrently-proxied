@@ -6,6 +6,7 @@ const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 const PROJECT_NAME = 'keystone';
 const adapterConfig = { DATABASE_URL: process.env.DATABASE_URL };
 const PostSchema = require('./lists/Post');
+const UserSchema = require('./lists/User');
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
@@ -14,6 +15,7 @@ const keystone = new Keystone({
 });
 
 keystone.createList('Post', PostSchema);
+keystone.createList('User', UserSchema);
 
 module.exports = {
   keystone,
