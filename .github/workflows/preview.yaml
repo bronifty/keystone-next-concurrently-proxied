@@ -1,7 +1,8 @@
+# file: .github/workflows/preview.yaml
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   preview:
@@ -11,13 +12,12 @@ jobs:
       uses: okteto/login@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
-        
+
     - name: Deploy preview environment
       uses: okteto/deploy-preview@latest
       env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        token: ${{ secrets.DATABASE_URL }}
         name: pr-${{ github.event.number }}-bronifty
         scope: personal
         timeout: 15m
