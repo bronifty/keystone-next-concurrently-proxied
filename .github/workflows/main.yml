@@ -27,3 +27,4 @@ jobs:
         with:
           build: 'true'
           namespace: pr-${{ github.event.number }}-bronifty
+          token: ${{ secrets.DATABASE_URL }}
