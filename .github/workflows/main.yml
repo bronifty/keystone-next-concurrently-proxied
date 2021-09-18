@@ -28,9 +28,4 @@ jobs:
           build: 'true'
           namespace: pr-${{ github.event.number }}-bronifty
           
-      - name: add comment to PR
-        uses: okteto/notify-pr@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          message: "Preview environment available at https://sick-fits-proxy-demo-pr-${{ github.event.number }}-bronifty.cloud.okteto.net"
+      
