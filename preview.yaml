@@ -1,0 +1,23 @@
+# file: .github/workflows/preview.yaml
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Login
+      uses: okteto/login@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: Deploy preview environment
+      uses: okteto/deploy-preview@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: pr-${{ github.event.number }}-bronifty
+        scope: personal
+        timeout: 15m
