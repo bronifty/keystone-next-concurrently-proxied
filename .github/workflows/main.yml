@@ -17,6 +17,7 @@ jobs:
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        token: ${{ secrets.DATABASE_URL }}
         name: pr-${{ github.event.number }}-bronifty
         scope: personal
         timeout: 15m
