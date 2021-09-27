@@ -13,7 +13,7 @@ services:
     build: ./frontend
     deploy:
       mode: replicated
-      replicas: 5
+      replicas: 1
     ports:
       - 3000
     restart: always
@@ -25,7 +25,7 @@ services:
     build: ./backend
     deploy:
       mode: replicated
-      replicas: 14
+      replicas: 2
     # env_file:
     #   - .env
     environment:
